@@ -1,0 +1,296 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Indicadores de Performance - Tech Farm System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('/images/Grafico fundo.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .faixa-azul {
+            background-color: #007bff;
+            padding: 4px 20px;
+            text-align: left;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50px;
+        }
+
+            .faixa-azul h2 {
+                color: #EFC123;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px #000;
+                margin: 0;
+                font-size: 20px;
+            }
+
+            .faixa-azul p {
+                color: #EFC123;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px #000;
+                margin: 5px 0 0 0;
+                font-size: 14px;
+            }
+
+        .linha-amarela {
+            background-color: #EFC123;
+            height: 5px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .card {
+            margin: 20px;
+            background-color: #cce0ff; /* Alteração da cor do card */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+            .card h4 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                font-size: 22px;
+                color: #007bff;
+                margin-bottom: 15px;
+            }
+
+            .card table {
+                width: 100%;
+                text-align: center;
+                font-size: 16px;
+                border-collapse: collapse;
+                margin: 0 auto;
+            }
+
+                .card table th,
+                .card table td {
+                    padding: 12px;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                .card table td {
+                    font-size: 14px;
+                }
+
+                .card table th {
+                    font-weight: bold;
+                    color: #000;
+                }
+
+        .faixa-titulo {
+            background-color: rgba(255, 204, 77, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+            .faixa-titulo h2 {
+                font-family: 'Raleway', sans-serif;
+                font-weight: bold;
+                color: #000;
+                margin: 0;
+            }
+
+        .btn-details {
+            background-color: #EFC123;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+
+            .btn-details:hover {
+                background-color: #d1a317;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="faixa-azul">
+        <h2>TECH FARM SYSTEM</h2>
+        <p>Você está logado como: Administrador</p>
+        <div class="linha-amarela"></div>
+    </div>
+
+    <div class="container">
+        <div class="faixa-titulo">
+            <h2>PAINEL DE INDICADORES DE PERFORMANCE</h2>
+        </div>
+
+        <div class="row">
+            <!-- Card de Produção -->
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Produção (KG)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Grão</th>
+                                    <th>Atual</th>
+                                    <th>Planejado</th>
+                                    <th>Variação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Milho</td>
+                                    <td>4.300</td>
+                                    <td>2.000</td>
+                                    <td>115%</td>
+                                </tr>
+                                <tr>
+                                    <td>Soja</td>
+                                    <td>3.800</td>
+                                    <td>3.000</td>
+                                    <td>26,67%</td>
+                                </tr>
+                                <tr>
+                                    <td>Arroz</td>
+                                    <td>5.000</td>
+                                    <td>4.500</td>
+                                    <td>11,11%</td>
+                                </tr>
+                                <tr>
+                                    <td>Trigo</td>
+                                    <td>6.000</td>
+                                    <td>5.000</td>
+                                    <td>20%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Estoque -->
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Estoque (KG)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Grão</th>
+                                    <th>Atual</th>
+                                    <th>Planejado</th>
+                                    <th>Variação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Milho</td>
+                                    <td>2.500</td>
+                                    <td>6.500</td>
+                                    <td>-61,54%</td>
+                                </tr>
+                                <tr>
+                                    <td>Soja</td>
+                                    <td>4.000</td>
+                                    <td>6.500</td>
+                                    <td>-38,46%</td>
+                                </tr>
+                                <tr>
+                                    <td>Arroz</td>
+                                    <td>3.200</td>
+                                    <td>6.500</td>
+                                    <td>-50,77%</td>
+                                </tr>
+                                <tr>
+                                    <td>Trigo</td>
+                                    <td>5.500</td>
+                                    <td>6.500</td>
+                                    <td>-15,38%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Vendas -->
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Vendas (R$)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Grão</th>
+                                    <th>Atual</th>
+                                    <th>Planejado</th>
+                                    <th>Variação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Milho</td>
+                                    <td>7.000</td>
+                                    <td>10.000</td>
+                                    <td>-30%</td>
+                                </tr>
+                                <tr>
+                                    <td>Soja</td>
+                                    <td>9.500</td>
+                                    <td>12.000</td>
+                                    <td>-20,83%</td>
+                                </tr>
+                                <tr>
+                                    <td>Arroz</td>
+                                    <td>8.000</td>
+                                    <td>11.000</td>
+                                    <td>-27,27%</td>
+                                </tr>
+                                <tr>
+                                    <td>Trigo</td>
+                                    <td>10.000</td>
+                                    <td>13.000</td>
+                                    <td>-23,08%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="/Detalhes/Index" class="btn-details">Ver Detalhes</a>
+    </div>
+
+</body>
+</html>

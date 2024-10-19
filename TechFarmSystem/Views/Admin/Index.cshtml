@@ -1,0 +1,189 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Tech Farm System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .faixa-azul {
+            background-color: #007bff;
+            padding: 4px 20px;
+            text-align: left;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50px;
+        }
+
+            .faixa-azul h2 {
+                color: #EFC123;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px #000;
+                margin: 0;
+                font-size: 20px;
+            }
+
+            .faixa-azul p {
+                color: #EFC123;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px #000;
+                margin: 5px 0 0 0;
+                font-size: 14px;
+            }
+
+        .linha-amarela {
+            background-color: #EFC123;
+            height: 5px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .card {
+            margin: 20px;
+            background-color: #e6f0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+            .card h5 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                font-size: 18px;
+                color: #007bff;
+            }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .faixa-titulo {
+            background-color: rgba(255, 204, 77, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+            .faixa-titulo h2 {
+                font-family: 'Raleway', sans-serif;
+                font-weight: bold;
+                color: #000;
+                margin: 0;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="faixa-azul">
+        <h2>TECH FARM SYSTEM</h2>
+        <p>Você está logado como: Administrador</p>
+        <div class="linha-amarela"></div>
+    </div>
+
+    <div class="container">
+        <div class="faixa-titulo">
+            <h2>DASHBOARD DE GERENCIAMENTO</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/609/609803.png" class="card-icon" alt="Dashboard">
+                        <h5>DASHBOARD DE GERENCIAMENTO</h5>
+                        <a href="@Url.Action("PainelIndicadores", "Dashboard")" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4117/4117111.png" class="card-icon" alt="Cadastro de Funcionários">
+                        <h5>CADASTRO DE FUNCIONÁRIOS</h5>
+                        <a href="@Url.Action("CadastroFuncionarios", "Funcionarios")" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/7890/7890496.png" class="card-icon" alt="Vendas">
+                        <h5>VENDAS</h5>
+                        <a href="@Url.Action("Vendas", "Vendas")" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3608/3608996.png" class="card-icon" alt="Estoque">
+                        <h5>ESTOQUE</h5>
+                        <a href="@Url.Action("Estoque", "Estoque")" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2110/2110200.png" class="card-icon" alt="Relatório">
+                        <h5>RELATÓRIO</h5>
+                        <a href="@Url.Action("Relatorios", "Relatorios")" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/8892/8892813.png" class="card-icon" alt="Produtos">
+                        <h5>PRODUTOS</h5>
+                        <a href="@Url.Action("Produtos", "Produtos")" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card" style="width: 300px;">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2640/2640844.png" class="card-icon" alt="Produção">
+                        <h5>PRODUÇÃO</h5>
+                        <a href="@Url.Action("Index", "Producao")" class="btn btn-primary">Acessar</a> <!-- Redirecionamento para Produção -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

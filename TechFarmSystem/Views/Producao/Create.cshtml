@@ -1,0 +1,115 @@
+﻿@model TechFarmSystem.Models.Producao
+
+@{
+    ViewData["Title"] = "Adicionar Nova Produção";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                transform: scale(1.05);
+            }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .back-link:hover {
+                text-decoration: underline;
+            }
+
+        .form-control::placeholder {
+            opacity: 0.6;
+        }
+
+        .text-danger {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <h2>Adicionar Nova Produção</h2>
+
+        <!-- Exibir mensagem de erro se houver -->
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @Html.Raw(ViewBag.ErrorMessage)
+            </div>
+        }
+
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="NomedoProduto" class="control-label">Nome do Produto</label>
+                <select asp-for="NomedoProduto" class="form-control">
+                    <option value="">Selecione um produto</option>
+                    <option value="Milho">Milho</option>
+                    <option value="Soja">Soja</option>
+                    <option value="Arroz">Arroz</option>
+                    <option value="Trigo">Trigo</option>
+                </select>
+                <span asp-validation-for="NomedoProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeProduzida" class="control-label">Quantidade Produzida</label>
+                <input asp-for="QuantidadeProduzida" class="form-control" placeholder="Max 2.500 kg" />
+                <span asp-validation-for="QuantidadeProduzida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataProducao" class="control-label">Data da Produção</label>
+                <input asp-for="DataProducao" class="form-control" placeholder="dd/mm/aaaa" />
+                <span asp-validation-for="DataProducao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observacoes" class="control-label">Observações</label>
+                <input asp-for="Observacoes" class="form-control" />
+                <span asp-validation-for="Observacoes" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <a asp-action="Index" class="back-link">Voltar para a Lista</a>
+    </div>
+</body>
+</html>

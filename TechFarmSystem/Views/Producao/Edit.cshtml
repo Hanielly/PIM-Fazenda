@@ -1,0 +1,52 @@
+﻿@model TechFarmSystem.Models.Producao
+
+@{
+    ViewData["Title"] = "Editar Produção";
+}
+
+<h2>Editar Produção</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="NomedoProduto" class="control-label"></label>
+        <select asp-for="NomedoProduto" class="form-control">
+            <option value="">Selecione um produto</option>
+            <option value="Milho">Milho</option>
+            <option value="Soja">Soja</option>
+            <option value="Arroz">Arroz</option>
+            <option value="Trigo">Trigo</option>
+        </select>
+        <span asp-validation-for="NomedoProduto" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="QuantidadeProduzida" class="control-label"></label>
+        <input asp-for="QuantidadeProduzida" class="form-control" />
+        <span asp-validation-for="QuantidadeProduzida" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataProducao" class="control-label"></label>
+        <input asp-for="DataProducao" class="form-control" />
+        <span asp-validation-for="DataProducao" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Observacoes" class="control-label"></label>
+        <input asp-for="Observacoes" class="form-control" />
+        <span asp-validation-for="Observacoes" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+}

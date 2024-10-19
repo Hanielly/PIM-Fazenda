@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TechFarmSystem.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Funcionários - Lista";
+}
+
+<h2>Lista de Funcionários</h2>
+
+@if (!Model.Any())
+{
+    <p>Não há funcionários cadastrados no momento.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Função</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var funcionario in Model)
+            {
+                <tr>
+                    <td>@funcionario.Nome</td>
+                    <td>@funcionario.Email</td>
+                    <td>@funcionario.Funcao</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@funcionario.Id">Editar</a> |
+                        <a asp-action="Delete" asp-route-id="@funcionario.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-action="Create" class="btn btn-primary">Adicionar Novo Funcionário</a>
